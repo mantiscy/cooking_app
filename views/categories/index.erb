@@ -1,0 +1,20 @@
+<section>
+  <% @categories.each do |category| %>
+  <article>
+    <dl>
+      <dt>Name:</dt>
+      <dd><%= category.name %></dd>
+    </dl>
+    <div class='clear_both'></div>
+    <div>
+      <a href="/categories/<%=category.id%>/show">show</a>
+    </div>
+  </article>
+
+  <% end %>
+
+</section>
+
+<div>
+  <a href="/categories/new">new category</a>
+</div>
