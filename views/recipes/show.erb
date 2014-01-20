@@ -5,6 +5,31 @@
       <dd><%=@recipe.name%></dd>
     </dl>
 
+    <dl>
+      <dt>Description :</dt>
+      <dd><%=@recipe.description%></dd>
+    </dl>
+
+    <dl>
+      <dt>Instructions :</dt>
+      <dd><%=@recipe.instructions %></dd>
+    </dl>
+
+    <dl>
+      <dt>Published on :</dt>
+      <dd><%=@recipe.published_on %></dd>
+    </dl>
+
+    <dl>
+      <dt>Ingredients :</dt>
+      <dd><%=@recipe.ingredients.map(&:name).join(', ') %></dd>
+    </dl>
+
+    <dl>
+      <dt>Categories :</dt>
+      <dd><%=@recipe.categories.map(&:name).join(', ') %></dd>
+    </dl>
+
     <div class='clear_both'></div>
 
     <div>
@@ -13,7 +38,6 @@
     <div>
       <a href="/recipes/<%=@recipe.id%>/edit">edit</a>
     </div>
-
 
   </article>
 </section>

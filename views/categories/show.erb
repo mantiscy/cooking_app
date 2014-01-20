@@ -5,6 +5,17 @@
       <dd><%=@category.name%></dd>
     </dl>
 
+    <dl>
+      <dt>Recipes :</dt>
+      <dd>
+        <ul>
+        <% @category.recipes.each do |recipe| %>
+          <li><%= recipe.name %></li>
+        <% end %>
+        </ul>
+      </dd>
+    </dl>
+
     <div class='clear_both'></div>
 
     <div>

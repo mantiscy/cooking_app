@@ -1,9 +1,10 @@
 class Ingredient
-  attr_accessor :name, :id
+  attr_accessor :name, :recipes, :id
 
   def initialize(params)
     @id = params.fetch('id')
     @name = params.fetch('name')
+    @recipes = []
   end
 
 end

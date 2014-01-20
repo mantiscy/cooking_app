@@ -5,6 +5,17 @@
       <dd><%=@ingredient.name%></dd>
     </dl>
 
+    <dl>
+      <dt>Recipes :</dt>
+      <dd>
+        <ul>
+        <% @ingredient.recipes.each do |recipe| %>
+          <li><%= recipe.name %></li>
+        <% end %>
+        </ul>
+      </dd>
+    </dl>
+
     <div class='clear_both'></div>
 
     <div>

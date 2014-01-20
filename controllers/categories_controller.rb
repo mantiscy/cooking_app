@@ -18,6 +18,10 @@ end
 get '/categories/:id/show' do
   sql = "select * from categories where id = #{params['id']}"
   @category = Category.new(run_sql(sql).first)
+
+  sql = "select * from recipes r join categories_recipes cr on cr.recipe_id = r.id where cr.category_id = #{@category.id}"
+  @category.recipes = run_sql(sql).map { |e| Recipe.new(e) }
+
   erb :'categories/show'
 end
 
@@ -34,7 +38,10 @@ post '/categories/:id' do
 end
 
 get '/categories/:id/delete' do
-  sql = "delete from categories where id = #{params['id']}"
+  sql = "
+    delete from categories where id = #{params['id']};
+    update recipes set category_id = null where category_id = #{params['id']};
+  "
   run_sql(sql)
   redirect to('/categories')
 end

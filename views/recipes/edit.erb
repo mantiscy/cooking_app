@@ -9,6 +9,58 @@
     </dd>
   </dl>
 
+  <dl>
+    <dt>
+      <label for='description'>Description:</label>
+    </dt>
+    <dd>
+      <textarea id='description' name='description'><%=@recipe.description %></textarea>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt>
+      <label for='instructions'>Instructions:</label>
+    </dt>
+    <dd>
+      <textarea id='instructions' name='instructions'><%=@recipe.instructions %></textarea>
+    </dd>
+  </dl>
+
+  <dl>
+    <dt>
+      <label for='published_on'>Published on:</label>
+    </dt>
+    <dd>
+      <input id='published_on' type='text' name='published_on' value='<%=@recipe.published_on %>'>
+    </dd>
+  </dl>
+
+  <h2>Categories:</h2>
+  <% @categories.each do |category| %>
+    <dl>
+      <dt>
+        <label for='categories[<%=category.id%>]'><%=category.name%>:</label>
+      </dt>
+      <dd>
+        <input type='checkbox' name='category_ids[]' value='<%= category.id %>' <%="checked='checked'" if @recipe.categories.map(&:id).include?(category.id)%>>
+      </dd>
+    </dl>
+  <% end %>
+
+
+  <h2>Ingredients:</h2>
+  <% @ingredients.each do |ingredient| %>
+    <dl>
+      <dt>
+        <label for='ingredients[<%=ingredient.id%>]'><%=ingredient.name%>:</label>
+      </dt>
+      <dd>
+        <input type='checkbox' name='ingredient_ids[]' value='<%= ingredient.id %>' <%="checked='checked'" if @recipe.ingredients.map(&:id).include?(ingredient.id)%>>
+      </dd>
+    </dl>
+  <% end %>
+
   <div class='clear_both'></div>
 
   <button>save</button>

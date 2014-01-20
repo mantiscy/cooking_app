@@ -1,15 +1,14 @@
 class Recipe
-  attr_accessor :name, :id, :description, :instructions, :published_on, :category_id, :image, :serving_size
+  attr_accessor :name, :description, :instructions, :published_on, :ingredients, :categories, :id
 
   def initialize(params)
     @id = params.fetch('id')
+    @categories = []
+    @description = params['description']
+    @instructions = params['instructions']
+    @published_on = params['published_on']
     @name = params.fetch('name')
-    @description = params.fetch('description')
-    @instructions = params.fetch('instructions') 
-    @published_on = params.fetch('published_on') 
-    @category_id = params.fetch('category_id')
-    @image = params.fetch('image') 
-    @serving_size = params.fetch('serving_size')
+    @ingredients = []
   end
 
 end
