@@ -6,7 +6,7 @@ require_relative 'models/category'
 require_relative 'controllers/categories_controller'
 require_relative 'models/ingredient'
 require_relative 'controllers/ingredients_controller'
-require_relative 'models/recipes'
+require_relative 'models/recipe'
 require_relative 'controllers/recipes_controller'
 
 
