@@ -17,13 +17,13 @@ end
 
 get '/ingredients/:id/show' do
   sql = "select * from ingredients where id = #{params['id']}"
-  @category = Ingredient.new(run_sql(sql).first)
+  @ingredient = Ingredient.new(run_sql(sql).first)
   erb :'ingredients/show'
 end
 
 get '/ingredients/:id/edit' do
   sql = "select * from ingredients where id = #{params['id']}"
-  @category = Ingredient.new(run_sql(sql).first)
+  @ingredient = Ingredient.new(run_sql(sql).first)
   erb :'ingredients/edit'
 end
 
