@@ -1,0 +1,17 @@
+<form action='/recipes/<%=@recipe.id%>' method='post'>
+
+  <dl>
+    <dt>
+      <label for='name'>Name:</label>
+    </dt>
+    <dd>
+      <input id='name' type='text' name='name' value='<%=@recipe.name %>' autofocus>
+    </dd>
+  </dl>
+
+  <div class='clear_both'></div>
+
+  <button>save</button>
+
+
+</form>

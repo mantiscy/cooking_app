@@ -1,0 +1,20 @@
+<section>
+  <% @recipes.each do |recipe| %>
+  <article>
+    <dl>
+      <dt>Name:</dt>
+      <dd><%= recipe.name %></dd>
+    </dl>
+    <div class='clear_both'></div>
+    <div>
+      <a href="/recipes/<%=recipe.id%>/show">show</a>
+    </div>
+  </article>
+
+  <% end %>
+
+</section>
+
+<div>
+  <a href="/recipes/new">new recipe</a>
+</div>
