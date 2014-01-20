@@ -1,0 +1,20 @@
+<section>
+  <% @ingredients.each do |ingredient| %>
+  <article>
+    <dl>
+      <dt>Name:</dt>
+      <dd><%= ingredient.name %></dd>
+    </dl>
+    <div class='clear_both'></div>
+    <div>
+      <a href="/ingredients/<%=ingredient.id%>/show">show</a>
+    </div>
+  </article>
+
+  <% end %>
+
+</section>
+
+<div>
+  <a href="/ingredients/new">new ingredient</a>
+</div>
