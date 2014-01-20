@@ -1,5 +1,5 @@
 class Recipe
-  attr_accessor :name, :id
+  attr_accessor :name, :id, :description, :instructions, :published_on, :category_id, :image, :serving_size
 
   def initialize(params)
     @id = params.fetch('id')
